@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.Concrete;
 
-namespace SignalR.DataAccessLayer.Repositories
+namespace SignalR.DataAccessLayer.EntityFramework
 {
 
-    public class GenericRepository<T> : IGenericDal<T> where T : class
+    public class EfGenericDal<T> : IGenericDal<T> where T : class
     {
         private readonly SignalRContext _context;
-        public GenericRepository(SignalRContext context)
+        public EfGenericDal(SignalRContext context)
         {
             _context = context;
         }
