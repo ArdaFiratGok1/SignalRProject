@@ -13,7 +13,7 @@ namespace SignalR.BusinessLayer.Concrete
     {
         private readonly ICategoryDal _categoryDal;
         public CategoryManager(ICategoryDal categoryDal) => _categoryDal = categoryDal;
-}
+
         public void TAdd(Category entity)
         {
             _categoryDal.Add(entity);
