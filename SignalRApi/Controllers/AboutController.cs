@@ -24,6 +24,20 @@ namespace SignalRApi.Controllers
             return Ok(values);
         }
 
+        [HttpPost]
+        public IActionResult CreateAbout(CreateAboutDto createAboutDto)
+        {
+            About about = new About()
+            {
+
+                Title = createAboutDto.Title,
+                Description = createAboutDto.Description,
+                ImageUrl = createAboutDto.ImageUrl
+            };
+            _aboutService.TAdd(about);
+            return Ok("successfully added");
+        }
+
         [HttpDelete]
         public IActionResult DeleteAbout(int id)
         {
@@ -32,7 +46,7 @@ namespace SignalRApi.Controllers
             return Ok("successfully deleted");
         }
 
-        [HttpPatch]
+        [HttpPut]
         public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
         {
             About about = new About()
@@ -46,19 +60,7 @@ namespace SignalRApi.Controllers
             return Ok("successfully updated");
         }
 
-        [HttpPost]
-        public IActionResult CreateAbout(CreateAboutDto createAboutDto)
-        {
-            About about = new About()
-            {
-                 
-                Title = createAboutDto.Title,
-                Description = createAboutDto.Description,
-                ImageUrl = createAboutDto.ImageUrl
-            };
-            _aboutService.TAdd(about);
-            return Ok("successfully added");
-        }
+        
 
         [HttpGet("GetAbout")]
         public IActionResult GetAbout(int id)
