@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SignalR.DtoLayer.CategoryDto;
+
+namespace SignalR.DtoLayer.ProductDto
+{
+    public class ResultProductWithCategoryDto
+    {
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public string ProductDescription { get; set; }
+        public int Price { get; set; }
+        public string ImageURL { get; set; }
+        public bool ProductStatus { get; set; }
+        public string CategoryName { get; set; }
+    }
+}

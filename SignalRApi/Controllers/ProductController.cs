@@ -63,7 +63,8 @@ namespace SignalRApi.Controllers
         [HttpGet("GetProductsWithCategory")]
         public IActionResult GetProductsWithCategory()
         {
-            
+            var values = _mapper.Map<List<ResultProductWithCategoryDto>>(_productService.TGetProductsWithCategory());
+            return Ok(values);
         }
         
 
