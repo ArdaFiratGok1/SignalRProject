@@ -11,7 +11,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
 
     public class EfGenericDal<T> : IGenericDal<T> where T : class
     {
-        private readonly SignalRContext _context;
+        protected readonly SignalRContext _context;
         public EfGenericDal(SignalRContext context)
         {
             _context = context;

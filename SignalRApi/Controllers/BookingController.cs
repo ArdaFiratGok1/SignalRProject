@@ -57,7 +57,6 @@ namespace SignalRApi.Controllers
         }
 
         [HttpGet("GetBooking")]
-        //Burada yine GetBookingDto'yu kullanmadık niye bilmiyorum
 
         public IActionResult GetBooking(int id)
         {
