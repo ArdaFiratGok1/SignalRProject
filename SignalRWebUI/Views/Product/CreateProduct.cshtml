@@ -1,0 +1,52 @@
+﻿@using SignalRWebUI.Dtos.ProductDtos
+
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@model CreateProductDto
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Forms</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" asp-controller="Product" asp-action="CreateProduct">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Ürün Ekleme Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="productname">Kategori Adı:</label>
+                                <input type="text" class="form-control" id="productname" asp-for="ProductName" placeholder="Ürün Adını Giriniz">
+                                <br />
+                                <label for="productdescription">Ürün Açıklaması:</label>
+                                <input type="text" class="form-control" id="productdescription" asp-for="ProductDescription" placeholder="Ürün Açıklamasını Giriniz">
+                                <br />
+
+                                <label for="productprice">Ürün Fiyatı:</label>
+                                <input type="text" class="form-control" id="productprice" asp-for="Price" placeholder="Ürün Fiyatı Giriniz">
+                                <br />
+
+                                <label for="productimageurl">Ürün Resim URL:</label>
+                                <input type="text" class="form-control" id="productimageurl" asp-for="ImageURL" placeholder="Ürün Resim URL Giriniz">
+                                <br />
+
+                                <label asp-for="CategoryID">Kategori:</label>
+                                @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.Categories, new {@class = "form-control"})
+
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

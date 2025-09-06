@@ -31,10 +31,10 @@
                                 <label for="categoryname">Yeni Kategori Adı:</label>
                                 <input type="text" class="form-control" id="categoryname" asp-for="CategoryName" placeholder="@Model.CategoryName">
 
-                                <div class="form-group">
-                                    <label asp-for="CategoryStatus">Kategori Durumu:</label>
-                                    <select class="form-control" asp-for="CategoryStatus" asp-items="statusOptions"></select>
-                                </div>
+                                
+                                 <label asp-for="CategoryStatus">Kategori Durumu:</label>
+                                 <select class="form-control" asp-for="CategoryStatus" asp-items="statusOptions"></select>
+                                
                             </div>
                         </div>
                         <div class="card-action">
