@@ -1,0 +1,43 @@
+﻿@using SignalRWebUI.Dtos.AboutDtos
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@model UpdateAboutDto
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Forms</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post" asp-controller="About" asp-action="UpdateAbout">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Hakkımda Güncelleme Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" asp-for="AboutID" />
+                            <div class="form-group">
+                                <label asp-for="Title">Yeni Başlık:</label>
+                                <input type="text" class="form-control" asp-for="Title" placeholder="@Model.Title">
+
+                                <label asp-for="ImageUrl">Yeni Resim Url:</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" placeholder="@Model.ImageUrl">
+
+                                <label asp-for="Description">Yeni Açıklama:</label>
+                                <input type="text" class="form-control" asp-for="Description" placeholder="@Model.Description">
+
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-warning">Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
