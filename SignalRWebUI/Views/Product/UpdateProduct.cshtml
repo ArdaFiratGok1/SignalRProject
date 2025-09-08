@@ -1,0 +1,65 @@
+﻿@using SignalRWebUI.Dtos.ProductDtos
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@model UpdateProductDto
+
+@{
+    //Dropdown için "Aktif" ve "Pasif" seçeneklerini hazırlıyoruz
+    var statusOptions = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "true", Text = "Aktif" },
+        new SelectListItem { Value = "false", Text = "Pasif" }
+    };
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Forms</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post" asp-controller="Product" asp-action="UpdateProduct">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Ürün Güncelleme Sayfası</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" asp-for="ProductID" />
+                            <div class="form-group">
+                                <label for="productname">Ürün Adı:</label>
+                                <input type="text" class="form-control" id="productname" asp-for="ProductName" placeholder="@Model.ProductName">
+                                <br />
+                                <label for="productdescription">Ürün Açıklaması:</label>
+                                <input type="text" class="form-control" id="productdescription" asp-for="ProductDescription" placeholder="@Model.ProductDescription">
+                                <br />
+
+                                <label for="productprice">Ürün Fiyatı:</label>
+                                <input type="text" class="form-control" id="productprice" asp-for="Price" placeholder="@Model.Price">
+                                <br />
+
+                                <label for="productimageurl">Ürün Resim URL:</label>
+                                <input type="text" class="form-control" id="productimageurl" asp-for="ImageURL" placeholder="@Model.ImageURL">
+                                <br />
+
+                                <label asp-for="ProductStatus">Ürün Durumu:</label>
+                                <select class="form-control" asp-for="ProductStatus" asp-items="statusOptions"></select>
+
+                                <label asp-for="CategoryID">Kategori:</label>
+                                <select class="form-control" asp-for="CategoryID" asp-items="ViewBag.Categories"></select>
+
+
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-warning">Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
