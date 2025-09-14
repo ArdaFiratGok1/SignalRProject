@@ -39,6 +39,7 @@ namespace SignalRWebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDiscount(CreateDiscountDto createDiscountDto)
         {
+
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createDiscountDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
